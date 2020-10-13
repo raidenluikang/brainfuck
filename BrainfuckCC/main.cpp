@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 	const char* program_file = argc == 2 ? argv[1] : "brainfuck_program.txt";
 	std::ifstream file(program_file);
 	if (!file.is_open()) {
-		std::cerr << "Cannot open a " << argv[1] << " file" << std::endl;
+		std::cerr << "Cannot open a " << program_file << " file" << std::endl;
 		return -1;
 	}
 
@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
 			print();
 		}
 		else if (c == ',') {
-			dec();
+			input();
 		}
 		else if (c == '[') {
 			if (!memory[index]) {
